@@ -1,1 +1,1 @@
-# 2024-hw-mini
+# 2024 Fall Hardware Miniproject
