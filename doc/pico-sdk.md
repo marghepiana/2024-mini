@@ -1,10 +1,11 @@
 # C / C++ on the Pico via Pico SDK
 
-Install
+Using C or C++ on the Pico is more complex than MicroPython.
+It requires
 [CMake, Git, and the 32-bit ARM compiler](./compiler.md)
 on the laptop.
 Then this software project can be built, which downloads the
-[Pico SDK](https://www.raspberrypi.com/documentation/pico-sdk/)
+[Pi Pico SDK](https://www.raspberrypi.com/documentation/pico-sdk/)
 automatically.
 
 Configure the CMake project once from the top-level fdirectory.
