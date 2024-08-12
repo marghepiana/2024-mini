@@ -72,7 +72,7 @@ Copy the .uf2 file to the Pico:
 cp ~/Downloads/p2-pico-w-latest.uf2 /Volumes/RPI-RP2/
 ```
 
-The Pico will immediately reboot and disconnect from the laptop, and show a flashing LED.
+The Pico will immediately reboot and disconnect from the laptop.
 
 ### Linux
 

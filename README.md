@@ -1,5 +1,7 @@
 # 2024 Fall Hardware Miniproject
 
+[ASSIGNMENT](./assignment/)
+
 This project uses the Raspberry Pi Pico WH (wireless, with header pins).
 
 Each student must provide a USB cable that connects to their laptop and has a micro-USB connector on the other end to plug into the Pi Pico.
@@ -25,3 +27,4 @@ Other IDE can be used, including Visual Studio Code or
 ## Reference
 
 * [Pico WH pinout diagram](https://datasheets.raspberrypi.com/picow/PicoW-A4-Pinout.pdf) shows the connections to analog and digital IO.
+* Getting Started with Pi Pico [book](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)

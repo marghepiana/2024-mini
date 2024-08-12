@@ -1,6 +1,6 @@
 # Thonny IDE
 
-[Thonny](https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico/2)
+[Thonny](https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico/)
 provides a graphical IDE for Python, including MicroPython on microcontrollers like the Pi Pico.
 Thonny requires
 [MicroPython](./micropython.md)

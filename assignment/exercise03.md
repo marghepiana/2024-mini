@@ -1,44 +1,24 @@
-# Exercise 03 - Capture time-pattern of button presses - Morse Code
+# Exercise 03: applications of analog input
 
-[Exercise Python script](./exercise03.py)
+[Exercise Python script](./exercise04.py)
 
-[Exercise 03 Questions](#questions)
-
-[Morse code table from wikipedia.org/wiki/File:International_Morse_Code.svg (public domain)](./morse_code.png)
-
-This Python script is a rudimentary
-[Morse Code](https://en.wikipedia.org/wiki/Morse_code)
-decoder and playback system using a tactile switch and onboard LED.
-The tactile switch is used to enter Morse Code, and the onboard LED is used to playback the Morse Code.
-
-The tactile switch is connected between GPIO 16 and ground.
-Or, you can change this line of code if you wish to use another GPIO pin.
-This is indicated by the line of code
-
-```python
-button = Pin(16, Pin.IN, Pin.PULL_UP)
-```
-
-because we've chosen the pin to be "PULL_UP" this means internal to the RP2040 CPU, there is a resistor connected inline with 3V3 supplied to GPIO 16.
-Connecting GPIO 16 with pull up to ground via the tactile switch is sensed by the CPU as a near-zero voltage i.e. "active low" which is used in Python code line
-
-```python
-if button.value() == 0:
-```
-
-Numerous microcontroller implementations of Morse Code decoders have existed for decades.
-This one is very simple, but is enough to demonstrate time-dependent reading of a digital input.
-
-A more correct implementation would use dot-dash ratios instead of fixed dot/dash times.
-We're not going to do that here, but it leads into Question 1.
-That is, in a real system, we'd want to be running more code than this that requires us to not have such a "good" i.e. small sample time.
-That's because each loop iteration must complete within the allotted time (especially if in the same thread, but even if in a separate thread) to measure dot-dash timing.
+Taking what we learned in the prior exercises, and exercise04.py, connect the photocell using the 10k ohm resistor as a voltage divider
+[circuit](../doc/photocell.md).
 
 ## Questions
 
-### Question 1
+Let's "calibrate" the light sensor to be meaningful.
+These values will change with room illumination and the specific photocell you have.
+We are just getting rough estimates, something other than the default values I used.
+Experiment to find approximate max_bright and min_bright values that:
 
-Suppose I want to add additional code that requires me to increase sample time, to allow more time for the additional code to execute.
-What is the tradeoff when I increase sample time relative to the "dot_dash_threshold" value?
-Try this by increasing "sample_ms" in exercise3.json on the Pico.
-The effect should be quite noticeable.
+* max_bright: make the LED duty cycle about 100% when in bright light (sunlight, room light)
+* min_bright: make the LED duty cycle about 0% when in very dim light (dark room, covered with hand)
+
+Please put these values in the exercise04.json file and read them with your own version of exercise04.py.
+This exercise04.json and exercise04.py should be in your own Git repo, and are the "answers" for Exercise 04.
+
+## Notes
+
+Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
+Duty cycle greater than 1 is undefined, so we clip the duty cycle to the range [0, 1].
