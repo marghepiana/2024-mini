@@ -1,12 +1,9 @@
 # 2024 Fall Hardware Miniproject
 
-This project uses the Raspberry
-[Pi Pico WH](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-w-and-pico-wh)
-(wireless, with header pins).
-A breadboard, Pi Pico WH, photocell, resistor, and wire kit are provided to each hardware miniproject student for the
-[circuit](./doc/circuit.md).
-Each student must provide a USB cable that connects to their macOS, Windows, or Linux laptop and has a micro-USB connector on the other end to plug into the Pico.
-The student laptop is used to program the Pico.
+This project uses the Raspberry Pi Pico WH (wireless, with header pins).
+
+Each student must provide a USB cable that connects to their laptop and has a micro-USB connector on the other end to plug into the Pi Pico.
+The student laptop is used to program the Pi Pico.
 The laptop software works on macOS, Windows, and Linux.
 
 This miniproject focuses on using
@@ -15,3 +12,16 @@ using
 [Thonny IDE](./doc/thonny.md).
 Other IDE can be used, including Visual Studio Code or
 [rshell](./doc/rshell.md).
+
+## Hardware
+
+* Raspberry Pi Pico WH [SC0919](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html#raspberry-pi-pico-w-and-pico-wh) (WiFi, Bluetooth, with header pins)
+* Freenove Pico breakout board [FNK0081](https://store.freenove.com/products/fnk0081)
+* Speaker 8 ohm 800 mW [SP-1605](https://www.soberton.com/wp-content/uploads/2018/07/SP-1605-June-2018.pdf)
+* [Photoresistor](./doc/photocell.md) and 10k ohm resistor
+* 2 [tactile switches](https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/184/TL59-TL58.pdf)
+
+
+## Reference
+
+* [Pico WH pinout diagram](https://datasheets.raspberrypi.com/picow/PicoW-A4-Pinout.pdf) shows the connections to analog and digital IO.

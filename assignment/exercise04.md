@@ -6,7 +6,7 @@
 
 Taking what we learned in the prior exercises, let's prepare the exercise04.py script for a quality program.
 Connect the photocell using the 10k ohm resistor as a voltage divider
-[circuit](../doc/circuit.md).
+[circuit](../doc/photocell.md).
 
 ## Questions
 
