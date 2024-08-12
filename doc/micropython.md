@@ -37,7 +37,18 @@ from the laptop using the correct UF2 file for the Pi Pico W hardware.
 curl -LO https://micropython.org/download/rp2-pico-w/rp2-pico-w-latest.uf2
 ```
 
-Copy this file "p2-pico-w-latest.uf2" to the Pi Pico by first holding down the BOOTSEL button, plugging into laptop USB, then release the BOOTSEL button.
+This requires a **micro-USB cable** that connects between the laptop and Pico.
+Check which type of USB port the laptop has.
+Almost all laptops have a USB-C or USB-A port.
+Some USB cables don't have the data pins connected.
+Suitable USB cables can be obtained from many local stores.
+
+Connect the micro-USB to the Pico.
+Before and as you plug the other end of the cable into your laptop, hold down the "BOOTSEL" button on the Pi Pico.
+The Pi Pico will appear almost instantly (while holding down BOOTSEL) as an external flash drive in the file browser of the laptop.
+Then release BOOTSEL button.
+
+Copy this file "p2-pico-w-latest.uf2" to the Pico.
 
 ![bootsel switch](./bootsel.png)
 

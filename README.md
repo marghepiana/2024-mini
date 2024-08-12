@@ -13,6 +13,5 @@ This miniproject focuses on using
 [MicroPython](./doc/micropython.md)
 using
 [Thonny IDE](./doc/thonny.md).
-You're welcome to other IDE and interface such as Visual Studio Code or
-[rshell](./doc/rshell.md),
-but generally we find the Thonny IDE to be faster and easier to work with.
+Other IDE can be used, including Visual Studio Code or
+[rshell](./doc/rshell.md).

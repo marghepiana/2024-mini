@@ -1,9 +1,8 @@
 # USB-serial console
 
-The USB-serial console is used by:
-
-* [MicroPython REPL](./micropython.md) and Python scripts
-* C / C++ programs using the [Pico SDK and TinyUSB library](./pico-sdk.md). Example:  [hello_usb](./src/hello_usb/CMakeLists.txt)
+The USB-serial console is used by
+[MicroPython REPL](./micropython.md)
+and Python scripts.
 
 Operating systems access USB-serial console distinctly as below.
 If using MicroPython, the REPL is the default program that runs on the Pico.
