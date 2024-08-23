@@ -1,38 +1,43 @@
-#!/usr/bin/env python3
-import machine
-import time
 import json
-import os.path
+import asyncio
+
+import network
+import urequests
 
 
-def get_params(param_file: str) -> tuple[int, float]:
-    """Reads parameters from a JSON file."""
+# url = "https://www.whatsmyua.info/api/v1/ua"
+url = "https://www.howsmyssl.com/a/check"
+DNS = "8.8.8.8"
 
-    if not os.path.isfile(param_file):
-        raise OSError(f"File {param_file} not found")
-
-    with open(param_file, "r") as f:
-        params = json.load(f)
-
-    return params["loop_count"], params["sleep_time"]
+ssid = ""
+passw = ""
 
 
-if __name__ == "__main__":
-    led = machine.Pin("LED", machine.Pin.OUT)
+def get_tls(jt: str) -> str:
+    params = json.loads(jt)
+    return params["tls_version"]
 
-    tic: int = time.ticks_ms()
 
-    N, delay = get_params("exercise02.json")
+async def main():
+    print(f"Connecting to WiFi {ssid}")
+    sta_if = network.WLAN(network.STA_IF)
+    sta_if.active(True)
+    sta_if.connect(ssid, passw)
+    while not sta_if.isconnected():
+        print(f"Still trying to connect to {ssid}")
+        await asyncio.sleep_ms(1000)
 
-    for i in range(N):
-        led.high()
-        time.sleep(delay)
-        led.low()
-        time.sleep(delay)
-        print(f"loop {i} / {N}")
+    print(f"Setting DNS {DNS}")
+    cfg = list(sta_if.ifconfig())
+    cfg[-1] = DNS
+    sta_if.ifconfig(cfg)
 
-    toc: int = time.ticks_ms()
+    print(f"Getting {url}")
+    r = urequests.get(url)
+    tls_version = get_tls(r.text)
+    r.close()
 
-    t_elapsed: float = time.ticks_diff(toc, tic) / 1000.0
+    print(f"TLS version: {tls_version}")
 
-    print(f"LED task done in {t_elapsed:.3f} sec")
+
+asyncio.run(main())
