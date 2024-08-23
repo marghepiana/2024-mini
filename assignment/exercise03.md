@@ -22,8 +22,7 @@ Experiment to find approximate max_bright and min_bright values that:
 * max_bright: make the LED duty cycle about 100% when in bright light (sunlight, room light)
 * min_bright: make the LED duty cycle about 0% when in very dim light (dark room, covered with hand)
 
-Please put these values in the exercise03.json file and read them with your own version of exercise03.py.
-This exercise03.json and exercise03.py should be in your own Git repo, and are the "answers" for Exercise 03.
+1. what are the "max_bright" and "min_bright" values you found?
 
 ## Notes
 

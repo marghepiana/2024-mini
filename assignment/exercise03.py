@@ -6,8 +6,11 @@ Use analog input with photocell
 import time
 import machine
 
+# GP28 is ADC2
+ADC2 = 28
+
 led = machine.Pin("LED", machine.Pin.OUT)
-adc = machine.ADC(28)
+adc = machine.ADC(ADC2)
 
 blink_period = 0.1
 

@@ -5,28 +5,30 @@ PWM Tone Generator
 based on https://www.coderdojotc.org/micropython/sound/04-play-scale/
 """
 
-from machine import Pin, PWM
+import machine
 import utime
 
-# lower right corner with USB connector on top
+# GP16 is the speaker pin
 SPEAKER_PIN = 16
 
 # create a Pulse Width Modulation Object on this pin
-speaker = PWM(Pin(SPEAKER_PIN))
+speaker = machine.PWM(machine.Pin(SPEAKER_PIN))
 
 
-def playtone(frequency: float, duration: float):
+def playtone(frequency: float, duration: float) -> None:
     speaker.duty_u16(1000)
     speaker.freq(frequency)
     utime.sleep(duration)
 
 
-def bequiet():
+def quiet():
     speaker.duty_u16(0)
 
 
 freq: float = 30
-duration: float = 0.3  # seconds
+duration: float = 0.1  # seconds
+
+print("Playing frequency (Hz):")
 
 for i in range(64):
     print(freq)
@@ -34,4 +36,4 @@ for i in range(64):
     freq = int(freq * 1.1)
 
 # Turn off the PWM
-speaker.duty_u16(0)
+quiet()
