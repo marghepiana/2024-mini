@@ -7,7 +7,11 @@ The Raspberry Pi Pico has eight PWM groups each with two PWM channels.
 The [Pico WH pinout diagram](https://datasheets.raspberrypi.com/picow/PicoW-A4-Pinout.pdf) shows that almost all Pico pins can be used for multiple distinct tasks as configured by MicroPython code or other software.
 In this exercise, we will generate a PWM signal to drive a speaker.
 
+GP16 is one of the pins that can be used to generate PWM signals.
+Connect the speaker with the black wire (negative) to GND and the red wire (positive) to GP16.
+
 In a more complete project, we would use additional resistors and capacitors with an amplifer to boost the sound output to a louder level with a bigger speaker.
+The sound output is quiet but usable for this exercise.
 
 Musical notes correspond to particular base frequencies and typically have rich harmonics in typical musical instruments.
 An example soundboard showing note frequencies is [clickable](https://muted.io/note-frequencies/).
