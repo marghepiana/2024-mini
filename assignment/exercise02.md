@@ -1,9 +1,5 @@
 # Exercise 02 - deterministic code
 
-[Exercise Python script](./exercise02.py)
-
-[Exercise 02 Questions](#questions)
-
 A common task in embedded systems is to repeat a task many times with a precise enough time interval.
 Since we expect deterministic execution, there should be little variance in time to execute vs. what happens on a non-real-time system such as full Raspberry Pi with a non-real-time operating system or a laptop computer.
 However, if the task is waiting on communication, IO or has random time delay, the execution time will vary.
