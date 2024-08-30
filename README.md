@@ -1,4 +1,4 @@
-# 2024 Fall Hardware Miniproject
+# 2024 Fall Miniproject
 
 [ASSIGNMENT](./assignment/)
 
