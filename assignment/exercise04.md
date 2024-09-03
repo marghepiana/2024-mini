@@ -1,4 +1,4 @@
-# Exercise 04 - PWM sound output
+# Exercise: PWM sound output
 
 PWM (Pulse Width Modulation) can be used to generate analog signals from digital outputs.
 The Raspberry Pi Pico has eight PWM groups each with two PWM channels.
@@ -18,4 +18,4 @@ For the question below, feel free to use musical scale of your choice!
 
 ## Questions
 
-1. Using the code in exercise04.py as a starting point, modify the code to play several notes in a sequence from a song of your choosing.
+1. Using the code in exercise_sound.py as a starting point, modify the code to play several notes in a sequence from a song of your choosing.

@@ -1,4 +1,4 @@
-# Exercise 02 - Connect to WiFi
+# Exercise: Connect to WiFi
 
 Often it's desired to use an embedded microcontroller such as the Pico W to connect to the internet.
 Often such IoT (Internet of Things) devices may only have the 2.4GHz band.

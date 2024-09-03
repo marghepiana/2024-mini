@@ -1,4 +1,4 @@
-# Exercise 03: applications of analog input
+# Exercise: applications of analog input
 
 Connect the photocell using the 10k ohm resistor as a voltage divider
 [circuit](../doc/photocell.md).

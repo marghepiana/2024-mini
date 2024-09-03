@@ -1,4 +1,4 @@
-# Exercise 01 - MicroPython wireless communication
+# Exercise: MicroPython wireless communication
 
 Python
 [modules](https://docs.python.org/3/tutorial/modules.html)
