@@ -1,12 +1,13 @@
-Question Answers:
+
+
+For the three assignments, the original codes provided were overwritten with our modified codes. 
+
+Exercise 1:
+The new values we found were a minimum of 14000 and a maximum of 55000. These were approximately the lowest and highest values the photocell read.
 
 
 
-Videos:
-
-
-
-
+Exercise 2: 
 
 
 
