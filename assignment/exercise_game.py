@@ -6,13 +6,27 @@ from machine import Pin
 import time
 import random
 import json
+import requests
+import network
 
 
-N: int = 3
+
+N: int = 10
 sample_ms = 10.0
 on_ms = 500
+# Connect to network
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
 
+# Fill in your network name (ssid) and password here:
+ssid = 'Margherita'
+password = 'marghehotspot2003'
 
+wlan.connect(ssid, password)
+#adding the following line;
+print("Am I Connected??")
+print(wlan.isconnected()) 
+database_api_url = "https://score-1dc8f-default-rtdb.firebaseio.com/scores.json"
 def random_time_interval(tmin: float, tmax: float) -> float:
     """return a random time interval between max and min"""
     return random.uniform(tmin, tmax)
@@ -40,7 +54,7 @@ def write_json(json_filename: str, data: dict) -> None:
     data: dict
         Dictionary data to write to the file.
     """
-
+    
     with open(json_filename, "w") as f:
         json.dump(data, f)
 
@@ -57,7 +71,18 @@ def scorer(t: list[int | None]) -> None:
     # add key, value to this dict to store the minimum, maximum, average response time
     # and score (non-misses / total flashes) i.e. the score a floating point number
     # is in range [0..1]
-    data = {}
+    if len(t_good)== 0:
+        print("You did not press any button you don't have a score ")
+        data={}
+    else:
+        
+        max_x=max(t_good)
+        min_x=min(t_good)
+        mean_x= sum(t_good)/len(t_good)
+        data = {"maximum":max_x ,
+                "minimum":min_x ,
+                "average response time":mean_x}
+        print(data)
 
     # %% make dynamic filename and write JSON
 
@@ -69,6 +94,10 @@ def scorer(t: list[int | None]) -> None:
     print("write", filename)
 
     write_json(filename, data)
+ 
+        
+    response = requests.post(database_api_url, json = data)
+
 
 
 if __name__ == "__main__":
@@ -96,6 +125,7 @@ if __name__ == "__main__":
         t.append(t0)
 
         led.low()
+ 
 
     blinker(5, led)
 
