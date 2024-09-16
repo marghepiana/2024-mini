@@ -4,7 +4,7 @@ For the three assignments, the original codes provided were overwritten with our
 
 Exercise 1:
 The new values we found were a minimum of 14000 and a maximum of 55000. These were approximately the lowest and highest values the photocell read.
-
+- [Link to video demo for exercise 1 showing the photocel readings and the light turning on and off based on the readings ](https://drive.google.com/file/d/1TNY0iuxiTV-cgtwoc1U1oIXnICd-V40Q/view?usp=sharing)
 
 
 Exercise 2: 
