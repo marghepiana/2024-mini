@@ -7,6 +7,12 @@ Videos:
 
 
 
+Exercise 1:
+The original code provided was overwritten with our modified code. The new values we found were a minimum of 14000 and a maximum of 55000. These were approximately the lowest and highest values the photocell read.
+
+
+
+Exercise 2: 
 
 
 
